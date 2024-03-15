@@ -1,3 +1,4 @@
+import "./index.css";
 import { ListCard } from "../ListCard";
 
 export const ListRender = ({ list, onEdit }) => {
