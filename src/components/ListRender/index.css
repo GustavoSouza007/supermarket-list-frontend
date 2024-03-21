@@ -1,10 +1,28 @@
 .list-render-container {
-  width: 60vw;
-  height: 80vh;
+  width: 100%;
+  height: 78vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 12px;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.info-list-items {
+  display: flex;
+}
+
+.mobile-info-list-items {
+  display: none;
+}
+
+@media screen and (max-width: 610px) {
+  .info-list-items {
+    display: none;
+  }
+
+  .mobile-info-list-items {
+    display: flex;
+  }
 }

@@ -51,6 +51,11 @@ export const ListScreen = () => {
           <div className="list-screen-header-button-container">
             <Button onClick={onClickAddButton}>Adicionar</Button>
           </div>
+          <div className="mobile-header-button">
+            <Button className="mobile-header-button" onClick={onClickAddButton}>
+              +
+            </Button>
+          </div>
         </div>
         <div className="list-screen-list-container">
           {loading ? (

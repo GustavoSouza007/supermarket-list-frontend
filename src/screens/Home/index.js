@@ -26,7 +26,7 @@ export const HomeScreen = () => {
           alt="shopping bag"
         />
         <h1 className="home-screen-title">
-          Sua lista de supermercado mais fácil do que nunca
+          Sua lista de supermercado <br /> mais fácil do que nunca.
         </h1>
         <h3 className="home-screen-subtitle">
           Ajudamos você a organizar sua <br /> lista de compras de forma
@@ -35,12 +35,14 @@ export const HomeScreen = () => {
         <h3 className="home-screen-description">
           Digite abaixo seu usuário para ter acesso a sua lista de compras:
         </h3>
-        <Input
-          onChange={(text) => setUsername(text)}
-          value={username}
-          label="Username"
-          placeholder="Ex: usuário1"
-        />
+        <div className="home-screen-input-container">
+          <Input
+            onChange={(text) => setUsername(text)}
+            value={username}
+            label="Username"
+            placeholder="Ex: usuário1"
+          />
+        </div>
         <div className="home-screen-button-container">
           <Button onClick={onClickContinue}>Continuar</Button>
         </div>

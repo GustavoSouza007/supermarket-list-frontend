@@ -36,6 +36,7 @@
   height: 24px;
   cursor: pointer;
   border: 0px;
+  margin-left: 24px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -54,4 +55,83 @@
 
 .buttons-spacer {
   height: 24px;
+}
+
+@media screen and (max-width: 1185px) {
+  .modal-content {
+    width: 28vw;
+  }
+}
+
+@media screen and (max-width: 1015px) {
+  .modal-content {
+    width: 32vw;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .modal-content {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-height: 930px) {
+  .buttons-container {
+    margin-top: 50vh;
+    height: 18vh;
+  }
+}
+
+@media screen and (max-height: 760px) {
+  .buttons-container {
+    margin-top: 46vh;
+  }
+}
+
+@media screen and (max-height: 680px) {
+  .buttons-container {
+    margin-top: 42vh;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .buttons-container {
+    margin-top: 40vh;
+  }
+}
+
+@media screen and (max-height: 560px) {
+  .buttons-container {
+    margin-top: 36vh;
+  }
+}
+
+@media screen and (max-height: 520px) {
+  .buttons-container {
+    margin-top: 32vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .modal-content {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-height: 470px) {
+  .buttons-container {
+    margin-top: 28vh;
+  }
+}
+
+@media screen and (max-height: 440px) {
+  .buttons-container {
+    margin-top: 24vh;
+  }
+}
+
+@media screen and (max-height: 410px) {
+  .buttons-container {
+    margin-top: 22vh;
+  }
 }

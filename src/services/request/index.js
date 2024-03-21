@@ -22,14 +22,14 @@ export const createItem = async (item) => {
   }
 };
 
-export const updateItem = async (item, id) => {
+export const updateItem = async (id, item) => {
   try {
     const result = await api.put(`/list-item/${id}`, {
       ...item,
     });
     return result.data;
   } catch (error) {
-    alert("Erro ao salvar novo item");
+    alert("Erro ao atualizar item");
     return { error };
   }
 };

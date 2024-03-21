@@ -41,7 +41,135 @@
   margin-bottom: 16px;
 }
 
+.home-screen-input-container {
+  width: 452px;
+}
+
 .home-screen-button-container {
   width: 452px;
   margin-top: 24px;
+}
+
+@media screen and (max-width: 570px) {
+  .home-screen-content-container {
+    width: 450px;
+    height: 620px;
+  }
+
+  .shopping-bag-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .home-screen-description {
+    max-width: 380px;
+  }
+
+  .home-screen-button-container {
+    width: 380px;
+  }
+
+  .home-screen-input-container {
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .home-screen-content-container {
+    width: 400px;
+    height: 570px;
+  }
+
+  .shopping-bag-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .home-screen-description {
+    max-width: 360px;
+  }
+
+  .home-screen-button-container {
+    width: 360px;
+  }
+
+  .home-screen-input-container {
+    width: 360px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .home-screen-content-container {
+    width: 360px;
+    height: 530px;
+  }
+
+  .shopping-bag-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .home-screen-description {
+    max-width: 300px;
+  }
+
+  .home-screen-button-container {
+    width: 300px;
+  }
+
+  .home-screen-input-container {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .home-screen-content-container {
+    width: 330px;
+    height: 500px;
+  }
+
+  .shopping-bag-image {
+    width: 110px;
+    height: 110px;
+  }
+
+  .home-screen-subtitle {
+    max-width: 310px;
+  }
+
+  .home-screen-description {
+    max-width: 280px;
+  }
+
+  .home-screen-button-container {
+    width: 280px;
+  }
+
+  .home-screen-input-container {
+    width: 280px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .home-screen-content-container {
+    width: 300px;
+    height: 470px;
+  }
+
+  .shopping-bag-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .home-screen-description {
+    max-width: 260px;
+  }
+
+  .home-screen-button-container {
+    width: 260px;
+  }
+
+  .home-screen-input-container {
+    width: 260px;
+  }
 }
