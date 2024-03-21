@@ -23,7 +23,7 @@ export const ListRender = ({ list, onEdit }) => {
 
   return (
     <div className="list-render-container">
-      {list.map((item) => (
+      {[...list].reverse().map((item) => (
         <ListCard onClick={onEdit} key={item?._id} item={item} />
       ))}
     </div>
