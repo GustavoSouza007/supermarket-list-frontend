@@ -2,23 +2,25 @@ import "./index.css";
 import { useState, useEffect } from "react";
 import { getList } from "../../services/request";
 import { Loader, ListRender, Button, Modal } from "../../components";
+import { SAVE_USERNAME_PATH } from "../../services/constants";
 
 export const ListScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [loading, setLoading] = useState(true);
   const [listData, setListData] = useState([]);
   const [selectItem, setSelectItem] = useState(null);
+  const username = localStorage.getItem(SAVE_USERNAME_PATH);
 
   const loadListItems = async () => {
     setLoading(true);
-    const result = await getList();
+    const result = await getList(username);
     setListData(result);
     setLoading(false);
   };
 
   useEffect(() => {
-    loadListItems();
-  }, []);
+    loadListItems(username);
+  }, [username]);
 
   const onClickAddButton = () => {
     setSelectItem(null);

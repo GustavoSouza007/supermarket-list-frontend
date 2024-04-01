@@ -1,8 +1,12 @@
 import { api } from "../api";
 
-export const getList = async () => {
+export const getList = async (username) => {
   try {
-    const result = await api.get("/list-items");
+    const result = await api.get("/list-items", {
+      headers: {
+        username: username,
+      },
+    });
     return result.data;
   } catch (error) {
     alert("Erro ao buscar dados da API");
@@ -10,10 +14,13 @@ export const getList = async () => {
   }
 };
 
-export const createItem = async (item) => {
+export const createItem = async (item, username) => {
   try {
     const result = await api.post("/list-item", {
       ...item,
+      headers: {
+        username: username,
+      },
     });
     return result.data;
   } catch (error) {
