@@ -16,5 +16,12 @@ module.exports = {
     'react/no-unescaped-entities': 'off',
     'multiline-ternary': 'off',
     'react/no-unknown-property': 'off'
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src']
+      }
+    }
   }
 }

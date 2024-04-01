@@ -1,10 +1,10 @@
-import { api } from '../api'
+import { api } from 'services/api'
 
 export const getList = async (username) => {
   try {
     const result = await api.get('/list-items', {
       headers: {
-        username: username
+        username
       }
     })
     return result.data

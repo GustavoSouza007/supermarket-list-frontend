@@ -1,8 +1,8 @@
 import './index.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button, Input } from '../../components/'
-import { SAVE_USERNAME_PATH } from '../../services/constants'
+import { Button, Input } from 'components'
+import { SAVE_USERNAME_PATH } from 'services/constants'
 
 export const HomeScreen = () => {
   const navigate = useNavigate()

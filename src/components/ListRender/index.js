@@ -1,6 +1,5 @@
 import './index.css'
-import { ListCard } from '../ListCard'
-
+import { ListCard } from 'components/ListCard'
 export const ListRender = ({ list, onEdit }) => {
   if (list?.length === 0) {
     return (

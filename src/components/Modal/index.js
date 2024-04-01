@@ -1,8 +1,8 @@
 import './index.css'
 import { useEffect, useState } from 'react'
-import { Input } from '../Input'
-import { Button } from '../Button'
-import { createItem, updateItem, deleteItem } from '../../services/request'
+import { Input } from 'components/Input'
+import { Button } from 'components/Button'
+import { createItem, updateItem, deleteItem } from 'services/request'
 
 export const Modal = ({ onClose, item }) => {
   const [name, setName] = useState('')

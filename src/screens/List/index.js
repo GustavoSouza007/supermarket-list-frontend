@@ -1,8 +1,8 @@
 import './index.css'
 import { useState, useEffect } from 'react'
-import { getList } from '../../services/request'
-import { Loader, ListRender, Button, Modal } from '../../components'
-import { SAVE_USERNAME_PATH } from '../../services/constants'
+import { getList } from 'services/request'
+import { Loader, ListRender, Button, Modal } from 'components'
+import { SAVE_USERNAME_PATH } from 'services/constants'
 
 export const ListScreen = () => {
   const [modalVisible, setModalVisible] = useState(false)
