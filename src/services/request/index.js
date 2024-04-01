@@ -14,13 +14,10 @@ export const getList = async (username) => {
   }
 };
 
-export const createItem = async (item, username) => {
+export const createItem = async (item) => {
   try {
     const result = await api.post("/list-item", {
       ...item,
-      headers: {
-        username: username,
-      },
     });
     return result.data;
   } catch (error) {

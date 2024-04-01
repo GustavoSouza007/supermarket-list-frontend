@@ -3,12 +3,10 @@ import { useEffect, useState } from "react";
 import { Input } from "../Input";
 import { Button } from "../Button";
 import { createItem, updateItem, deleteItem } from "../../services/request";
-import { SAVE_USERNAME_PATH } from "../../services/constants";
 
 export const Modal = ({ onClose, item }) => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
-  const username = localStorage.getItem(SAVE_USERNAME_PATH);
 
   const validateBeforeSave = () => {
     if (name.length < 3) {
@@ -26,13 +24,10 @@ export const Modal = ({ onClose, item }) => {
   const callAddItem = async () => {
     const validate = validateBeforeSave();
     if (validate) {
-      const result = await createItem(
-        {
-          name,
-          quantity: Number(quantity),
-        },
-        username
-      );
+      const result = await createItem({
+        name,
+        quantity: Number(quantity),
+      });
       if (!result?.error) {
         alert("Item salvo com sucesso");
         onClose();
