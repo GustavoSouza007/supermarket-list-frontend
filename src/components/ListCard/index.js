@@ -1,15 +1,15 @@
-import { useState } from "react";
-import "./index.css";
+import { useState } from 'react'
+import './index.css'
 
 export const ListCard = ({ item, onClick }) => {
-  const [checked, setChecked] = useState(item?.checked);
+  const [checked, setChecked] = useState(item?.checked)
   return (
     <div className="list-card-container">
       <img
         className="checkbox"
         onClick={() => setChecked(!checked)}
         checked={checked}
-        src={`/images/${checked ? "checked.svg" : "unchecked.svg"}`}
+        src={`/images/${checked ? 'checked.svg' : 'unchecked.svg'}`}
         alt="checked-item"
       />
       <div className="list-card-text-container">
@@ -20,5 +20,5 @@ export const ListCard = ({ item, onClick }) => {
         <img src="/images/arrow.svg" alt="arrow-icon" className="arrow-icon" />
       </button>
     </div>
-  );
-};
+  )
+}

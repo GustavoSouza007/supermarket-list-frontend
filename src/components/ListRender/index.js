@@ -1,5 +1,5 @@
-import "./index.css";
-import { ListCard } from "../ListCard";
+import './index.css'
+import { ListCard } from '../ListCard'
 
 export const ListRender = ({ list, onEdit }) => {
   if (list?.length === 0) {
@@ -18,7 +18,7 @@ export const ListRender = ({ list, onEdit }) => {
           </h3>
         </div>
       </>
-    );
+    )
   }
 
   return (
@@ -27,5 +27,5 @@ export const ListRender = ({ list, onEdit }) => {
         <ListCard onClick={onEdit} key={item?._id} item={item} />
       ))}
     </div>
-  );
-};
+  )
+}
