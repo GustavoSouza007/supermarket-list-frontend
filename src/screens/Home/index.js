@@ -1,8 +1,15 @@
-import './index.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Input } from 'components'
 import { SAVE_USERNAME_PATH } from 'services/constants'
+import {
+  ScreenContainer,
+  ContentContainer,
+  BagImage,
+  Title,
+  Subtitle,
+  FormContainer
+} from './styles'
 
 export const HomeScreen = () => {
   const navigate = useNavigate()
@@ -18,35 +25,36 @@ export const HomeScreen = () => {
   }
 
   return (
-    <div className="home-screen-container ">
-      <div className="home-screen-content-container">
-        <img
-          className="shopping-bag-image"
-          src="/images/shopping-bag.svg"
-          alt="shopping bag"
-        />
-        <h1 className="home-screen-title">
+    <ScreenContainer>
+      <ContentContainer>
+        <BagImage />
+
+        <Title>
           Sua lista de supermercado <br /> mais fácil do que nunca.
-        </h1>
-        <h3 className="home-screen-subtitle">
+        </Title>
+
+        <Subtitle>
           Ajudamos você a organizar sua <br /> lista de compras de forma
           descomplicada.
-        </h3>
-        <h3 className="home-screen-description">
+        </Subtitle>
+
+        <Subtitle mw={452} mb={16} align="left">
           Digite abaixo seu usuário para ter acesso a sua lista de compras:
-        </h3>
-        <div className="home-screen-input-container">
+        </Subtitle>
+
+        <FormContainer>
           <Input
             onChange={(text) => setUsername(text)}
             value={username}
             label="Username"
             placeholder="Ex: usuário1"
           />
-        </div>
-        <div className="home-screen-button-container">
+        </FormContainer>
+
+        <FormContainer mt={24}>
           <Button onClick={onClickContinue}>Continuar</Button>
-        </div>
-      </div>
-    </div>
+        </FormContainer>
+      </ContentContainer>
+    </ScreenContainer>
   )
 }
