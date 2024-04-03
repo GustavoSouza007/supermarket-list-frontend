@@ -90,23 +90,23 @@ export const Subtitle = styled.h3`
   margin-bottom: ${({ mb }) => mb || 48}px;
 
   @media (max-width: 570px) {
-    max-width: ${({ mw }) => 380 || 320}px;
+    max-width: ${({ mw }) => mw === 380 || 320}px;
   }
 
   @media (max-width: 460px) {
-    max-width: ${({ mw }) => 360 || 320}px;
+    max-width: ${({ mw }) => mw === 360 || 320}px;
   }
 
   @media (max-width: 420px) {
-    max-width: ${({ mw }) => 300 || 320}px;
+    max-width: ${({ mw }) => mw === 300 || 320}px;
   }
 
   @media (max-width: 375px) {
-    max-width: ${({ mw }) => 280 || 310}px;
+    max-width: ${({ mw }) => mw === 280 || 310}px;
   }
 
   @media (max-width: 350px) {
-    max-width: ${({ mw }) => 260 || 310}px;
+    max-width: ${({ mw }) => mw === 260 || 310}px;
   }
 `
 
@@ -132,6 +132,6 @@ export const FormContainer = styled.div`
 
   @media (max-width: 350px) {
     width: 260px;
-    margin-top: ${({ mt }) => 0 || 0}px;
+    margin-top: ${({ mt }) => mt === 0 || 0}px;
   }
 `
