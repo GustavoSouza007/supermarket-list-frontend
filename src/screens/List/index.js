@@ -1,7 +1,7 @@
 import './index.css'
 import { useState, useEffect } from 'react'
 import { getList } from 'services/request'
-import { Loader, ListRender, Button, Modal } from 'components'
+import { Loader, ListRender, Button, Modal, Title } from 'components'
 import { SAVE_USERNAME_PATH } from 'services/constants'
 
 export const ListScreen = () => {
@@ -48,7 +48,9 @@ export const ListScreen = () => {
               src="/images/logo.png"
               alt="supermarket-list-logo"
             />
-            <h1 className="list-screen-header-title">Lista de Supermercado</h1>
+            <Title fontSizeList={32} ml={12} pd={10}>
+              Lista de Supermercado
+            </Title>
           </div>
           <div className="list-screen-header-button-container">
             <Button onClick={onClickAddButton}>Adicionar</Button>

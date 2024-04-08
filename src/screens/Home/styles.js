@@ -78,38 +78,6 @@ export const BagImage = styled.img.attrs({
   }
 `
 
-export const Title = styled.h1`
-  max-width: 320px;
-  text-align: center;
-  margin-bottom: 12px;
-`
-
-export const Subtitle = styled.h3`
-  max-width: ${({ mw }) => mw || 320}px;
-  text-align: ${({ align }) => align || 'center'};
-  margin-bottom: ${({ mb }) => mb || 48}px;
-
-  @media (max-width: 570px) {
-    max-width: ${({ mw }) => mw === 380 || 320}px;
-  }
-
-  @media (max-width: 460px) {
-    max-width: ${({ mw }) => mw === 360 || 320}px;
-  }
-
-  @media (max-width: 420px) {
-    max-width: ${({ mw }) => mw === 300 || 320}px;
-  }
-
-  @media (max-width: 375px) {
-    max-width: ${({ mw }) => mw === 280 || 310}px;
-  }
-
-  @media (max-width: 350px) {
-    max-width: ${({ mw }) => mw === 260 || 310}px;
-  }
-`
-
 export const FormContainer = styled.div`
   width: 452px;
   margin-top: ${({ mt }) => mt || 0}px;
@@ -132,6 +100,6 @@ export const FormContainer = styled.div`
 
   @media (max-width: 350px) {
     width: 260px;
-    margin-top: ${({ mt }) => mt === 0 || 0}px;
+    margin-top: ${({ mt }) => (mt ? 0 : 0)}px;
   }
 `

@@ -1,13 +1,11 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Button, Input } from 'components'
+import { Button, Input, Title, Subtitle } from 'components'
 import { SAVE_USERNAME_PATH } from 'services/constants'
 import {
   ScreenContainer,
   ContentContainer,
   BagImage,
-  Title,
-  Subtitle,
   FormContainer
 } from './styles'
 
@@ -29,16 +27,16 @@ export const HomeScreen = () => {
       <ContentContainer>
         <BagImage />
 
-        <Title>
+        <Title mw={336} fontSizeHome={24} mb={12} ta="center">
           Sua lista de supermercado <br /> mais fácil do que nunca.
         </Title>
 
-        <Subtitle>
+        <Subtitle mwSubtitle={344} mbSubtitle={48} taSubtitle="center">
           Ajudamos você a organizar sua <br /> lista de compras de forma
           descomplicada.
         </Subtitle>
 
-        <Subtitle mw={452} mb={16} align="left">
+        <Subtitle mwDescription={452} mbDescription={16} taDescription="left">
           Digite abaixo seu usuário para ter acesso a sua lista de compras:
         </Subtitle>
 
