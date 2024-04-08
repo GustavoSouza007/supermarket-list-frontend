@@ -78,3 +78,10 @@ export const Subtitle = styled.h3`
       mwDescription ? 260 : 452 && mwSubtitle ? 280 : 344}px;
   }
 `
+
+export const SmallText = styled.span`
+  font-size: ${({ fontSizeTitle, fontSizeSubtitle }) =>
+    fontSizeTitle || fontSizeSubtitle}px;
+  font-weight: 500;
+  margin-bottom: ${({ mb }) => mb}px;
+`

@@ -1,5 +1,5 @@
 import './index.css'
-import { ListCard } from 'components/ListCard'
+import { ListCard } from 'components/molecules/ListCard'
 export const ListRender = ({ list, onEdit }) => {
   if (list?.length === 0) {
     return (

@@ -1,0 +1,32 @@
+import { useState } from 'react'
+import {
+  ListCardContainer,
+  CheckImage,
+  TextContainer,
+  ArrowButton,
+  ArrowIcon
+} from './styles'
+import { SmallText } from 'components/atoms'
+
+export const ListCard = ({ item, onClick }) => {
+  const [checked, setChecked] = useState(item?.checked)
+  return (
+    <ListCardContainer>
+      <CheckImage
+        onClick={() => setChecked(!checked)}
+        checked={checked}
+        src={`/images/${checked ? 'checked.svg' : 'unchecked.svg'}`}
+        alt="checked-item"
+      />
+      <TextContainer>
+        <SmallText fontSizeTitle={16} mb={4}>
+          {item?.name}
+        </SmallText>
+        <SmallText fontSizeSubtitle={14}>{item?.quantity} unidades</SmallText>
+      </TextContainer>
+      <ArrowButton onClick={() => onClick(item)}>
+        <ArrowIcon />
+      </ArrowButton>
+    </ListCardContainer>
+  )
+}
