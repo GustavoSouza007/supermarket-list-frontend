@@ -1,30 +1,36 @@
-import './index.css'
-import { ListCard } from 'components/molecules/ListCard'
+import { ListCard } from 'components/molecules'
+import { Subtitle } from 'components/atoms'
+import {
+  ListRenderContainer,
+  InfoListItems,
+  MobileInfoListItems
+} from './styles'
+
 export const ListRender = ({ list, onEdit }) => {
   if (list?.length === 0) {
     return (
       <>
-        <div className="info-list-items">
-          <h3>
+        <InfoListItems>
+          <Subtitle>
             Sua lista está vazia, adicione um novo item clicando no botão de
             'Adicionar'.
-          </h3>
-        </div>
-        <div className="mobile-info-list-items">
-          <h3>
+          </Subtitle>
+        </InfoListItems>
+        <MobileInfoListItems>
+          <Subtitle>
             Sua lista está vazia, adicione um novo item clicando no botão de
             '+'.
-          </h3>
-        </div>
+          </Subtitle>
+        </MobileInfoListItems>
       </>
     )
   }
 
   return (
-    <div className="list-render-container">
+    <ListRenderContainer>
       {[...list].reverse().map((item) => (
         <ListCard onClick={onEdit} key={item?._id} item={item} />
       ))}
-    </div>
+    </ListRenderContainer>
   )
 }

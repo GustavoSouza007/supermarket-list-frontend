@@ -1,9 +1,15 @@
-import './index.css'
 import { useEffect, useState } from 'react'
-import { Input } from 'components/molecules/Input'
-import { Button } from 'components/atoms/Button'
-import { Title } from 'components/atoms'
+import { Input } from 'components/molecules'
+import { Title, Button } from 'components/atoms'
 import { createItem, updateItem, deleteItem } from 'services/request'
+import {
+  ModalBackgroundContainer,
+  ModalContentContainer,
+  ModalHeaderContainer,
+  ModalCloseButton,
+  ButtonsContainer,
+  ButtonsSpacer
+} from './styles'
 
 export const Modal = ({ onClose, item }) => {
   const [name, setName] = useState('')
@@ -67,12 +73,14 @@ export const Modal = ({ onClose, item }) => {
   }, [item])
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <div className="modal-header">
-          <Title>{item ? 'Editar item' : 'Adicionar novo item'}</Title>
-          <button onClick={onClose} className="modal-close-button" />
-        </div>
+    <ModalBackgroundContainer>
+      <ModalContentContainer>
+        <ModalHeaderContainer>
+          <Title fontSizeModal={20}>
+            {item ? 'Editar item' : 'Adicionar novo item'}
+          </Title>
+          <ModalCloseButton onClick={onClose} />
+        </ModalHeaderContainer>
         <Input
           onChange={(text) => setName(text)}
           value={name}
@@ -85,18 +93,18 @@ export const Modal = ({ onClose, item }) => {
           label="Quantidade"
           type="number"
         />
-        <div className="buttons-container">
+        <ButtonsContainer>
           {item && (
             <Button icon="trash" variant="outline" onClick={callDeleteItem}>
               Deletar item
             </Button>
           )}
-          <div className="buttons-spacer" />
+          <ButtonsSpacer />
           <Button onClick={item ? callUpdateItem : callAddItem}>
             {item ? 'Atualizar' : 'Adicionar'}
           </Button>
-        </div>
-      </div>
-    </div>
+        </ButtonsContainer>
+      </ModalContentContainer>
+    </ModalBackgroundContainer>
   )
 }

@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const Title = styled.h1`
   max-width: ${({ mw }) => mw}px;
-  font-size: ${({ fontSizeHome, fontSizeList }) =>
-    fontSizeHome || fontSizeList || 24}px;
+  font-size: ${({ fontSizeHome, fontSizeList, fontSizeModal }) =>
+    fontSizeHome || fontSizeList || fontSizeModal}px;
   margin-left: ${({ ml }) => ml}px;
   margin-bottom: ${({ mb }) => mb}px;
   padding-top: ${({ pd }) => pd}px;
@@ -30,6 +30,16 @@ export const Title = styled.h1`
   @media (max-width: 570px) {
     font-size: ${({ fontSizeHome, fontSizeList }) =>
       fontSizeList ? 22 : fontSizeHome}px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: ${({ fontSizeModal, fontSizeHome, fontSizeList }) =>
+      fontSizeModal ? 18 : fontSizeHome && fontSizeList}px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: ${({ fontSizeModal, fontSizeHome, fontSizeList }) =>
+      fontSizeModal ? 24 : fontSizeHome && fontSizeList}px;
   }
 
   @media (max-width: 420px) {
