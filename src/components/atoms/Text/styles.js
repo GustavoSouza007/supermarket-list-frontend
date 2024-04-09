@@ -12,29 +12,33 @@ export const Title = styled.h1`
   font-weight: bold;
   color: black;
 
-  @media (max-width: 1050px) {
+  @media (max-width: 1110px) {
     font-size: ${({ fontSizeHome, fontSizeList }) =>
       fontSizeList ? 28 : fontSizeHome}px;
   }
 
-  @media (max-width: 910px) {
+  @media (max-width: 980px) {
     font-size: ${({ fontSizeHome, fontSizeList }) =>
       fontSizeList ? 26 : fontSizeHome}px;
   }
 
-  @media (max-width: 680px) {
+  @media (max-width: 730px) {
     font-size: ${({ fontSizeHome, fontSizeList }) =>
       fontSizeList ? 24 : fontSizeHome}px;
   }
 
-  @media (max-width: 570px) {
+  @media (max-width: 660px) {
     font-size: ${({ fontSizeHome, fontSizeList }) =>
       fontSizeList ? 22 : fontSizeHome}px;
   }
 
   @media (max-width: 520px) {
     font-size: ${({ fontSizeModal, fontSizeHome, fontSizeList }) =>
-      fontSizeModal ? 18 : fontSizeHome && fontSizeList}px;
+      fontSizeModal
+        ? 18
+        : (fontSizeHome && fontSizeList) || fontSizeList
+          ? 20
+          : fontSizeModal && fontSizeHome}px;
   }
 
   @media (max-width: 500px) {

@@ -1,7 +1,16 @@
-import './index.css'
 import { useState, useEffect } from 'react'
 import { getList } from 'services/request'
 import { Loader, ListRender, Button, Modal, Title } from 'components'
+import {
+  ListScreenContainer,
+  ContentContainer,
+  HeaderContainer,
+  TitleContainer,
+  LogoImage,
+  HeaderButtonContainer,
+  MobileHeaderButtonContainer,
+  ListContainer
+} from './styles'
 import { SAVE_USERNAME_PATH } from 'services/constants'
 
 export const ListScreen = () => {
@@ -39,37 +48,31 @@ export const ListScreen = () => {
   }
 
   return (
-    <div className="list-screen-container">
-      <div className="list-screen-content-container">
-        <div className="list-screen-header">
-          <div className="list-screen-title-container">
-            <img
-              className="logo-image"
-              src="/images/logo.png"
-              alt="supermarket-list-logo"
-            />
+    <ListScreenContainer>
+      <ContentContainer>
+        <HeaderContainer>
+          <TitleContainer>
+            <LogoImage />
             <Title fontSizeList={32} ml={12} pd={10}>
               Lista de Supermercado
             </Title>
-          </div>
-          <div className="list-screen-header-button-container">
+          </TitleContainer>
+          <HeaderButtonContainer>
             <Button onClick={onClickAddButton}>Adicionar</Button>
-          </div>
-          <div className="mobile-header-button">
-            <Button className="mobile-header-button" onClick={onClickAddButton}>
-              +
-            </Button>
-          </div>
-        </div>
-        <div className="list-screen-list-container">
+          </HeaderButtonContainer>
+          <MobileHeaderButtonContainer>
+            <Button onClick={onClickAddButton}>+</Button>
+          </MobileHeaderButtonContainer>
+        </HeaderContainer>
+        <ListContainer>
           {loading ? (
             <Loader />
           ) : (
             <ListRender onEdit={onEditItem} list={listData} />
           )}
-        </div>
-      </div>
+        </ListContainer>
+      </ContentContainer>
       {modalVisible && <Modal item={selectItem} onClose={onCloseModal} />}
-    </div>
+    </ListScreenContainer>
   )
 }
