@@ -78,6 +78,10 @@ export const ButtonsContainer = styled.div`
   justify-content: flex-end;
   margin-top: auto;
   margin-bottom: 32px;
+
+  @media (max-width: 500px) {
+    margin-bottom: 46px;
+  }
 `
 
 export const ButtonsSpacer = styled.div`
