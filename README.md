@@ -3,7 +3,7 @@
 This application is built using React.js to make it easier to create supermarket lists.
 
 <p>
-<img src="" />
+<img src="https://github.com/GustavoSouza007/supermarket-list-frontend/blob/master/public/images/demo.gif" />
 </p>
 
 ## Running Instructions
