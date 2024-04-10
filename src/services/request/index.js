@@ -1,4 +1,5 @@
 import { api } from 'services/api'
+import { toast } from 'react-toastify'
 
 export const getList = async (username) => {
   try {
@@ -9,7 +10,7 @@ export const getList = async (username) => {
     })
     return result.data
   } catch (error) {
-    alert('Erro ao buscar dados da API')
+    toast.error('Erro ao buscar dados da API')
     return { error }
   }
 }
@@ -21,7 +22,7 @@ export const createItem = async (item) => {
     })
     return result.data
   } catch (error) {
-    alert('Erro ao salvar novo item')
+    toast.error('Erro ao salvar novo item')
     return { error }
   }
 }
@@ -33,7 +34,7 @@ export const updateItem = async (id, item) => {
     })
     return result.data
   } catch (error) {
-    alert('Erro ao atualizar item')
+    toast.error('Erro ao atualizar item')
     return { error }
   }
 }
@@ -43,7 +44,7 @@ export const deleteItem = async (id) => {
     const result = await api.delete(`/list-item/${id}`)
     return result.data
   } catch (error) {
-    alert('Erro ao deleta item')
+    toast.error('Erro ao deleta item')
     return { error }
   }
 }

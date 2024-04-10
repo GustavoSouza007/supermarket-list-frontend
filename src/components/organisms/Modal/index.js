@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 import { Input } from 'components/molecules'
 import { Title, Button } from 'components/atoms'
 import { createItem, updateItem, deleteItem } from 'services/request'
@@ -17,12 +18,12 @@ export const Modal = ({ onClose, item }) => {
 
   const validateBeforeSave = () => {
     if (name.length < 3) {
-      alert('Nome deve ter mais de 3 caracteres')
+      toast.warning('Nome deve conter mais do que 2 caracteres!')
       return false
     }
 
     if (quantity < 1) {
-      alert('Quantidade não pode ser menor do que 1')
+      toast.warning('Quantidade não pode ser menor do que 1!')
       return false
     }
     return true
@@ -36,7 +37,7 @@ export const Modal = ({ onClose, item }) => {
         quantity: Number(quantity)
       })
       if (!result?.error) {
-        alert('Item salvo com sucesso')
+        toast.success('Item salvo com sucesso!')
         onClose()
       }
     }
@@ -51,7 +52,7 @@ export const Modal = ({ onClose, item }) => {
         checked: item?.checked
       })
       if (!result?.error) {
-        alert('Item atualizado com sucesso')
+        toast.success('Item atualizado com sucesso!')
         onClose()
       }
     }
@@ -60,7 +61,7 @@ export const Modal = ({ onClose, item }) => {
   const callDeleteItem = async () => {
     const result = await deleteItem(item?._id)
     if (!result?.error) {
-      alert('Item deletado com sucesso')
+      toast.success('Item deletado com sucesso!')
       onClose()
     }
   }

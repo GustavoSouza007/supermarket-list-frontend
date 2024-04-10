@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Input, Title, Subtitle } from 'components'
 import { SAVE_USERNAME_PATH } from 'services/constants'
+import { toast } from 'react-toastify'
 import {
   ScreenContainer,
   ContentContainer,
@@ -15,7 +16,7 @@ export const HomeScreen = () => {
 
   const onClickContinue = () => {
     if (username.length < 3) {
-      alert('Username deve conter mais do que 3 caracteres!')
+      toast.success('Username deve conter mais do que 3 caracteres!')
       return
     }
     localStorage.setItem(SAVE_USERNAME_PATH, username)
