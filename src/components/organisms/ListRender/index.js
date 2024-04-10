@@ -6,7 +6,7 @@ import {
   MobileInfoListItems
 } from './styles'
 
-export const ListRender = ({ list, onEdit }) => {
+export const ListRender = ({ list, onEdit, onCheckItem }) => {
   if (list?.length === 0) {
     return (
       <>
@@ -29,7 +29,12 @@ export const ListRender = ({ list, onEdit }) => {
   return (
     <ListRenderContainer>
       {[...list].reverse().map((item) => (
-        <ListCard onClick={onEdit} key={item?._id} item={item} />
+        <ListCard
+          onCheckItem={onCheckItem}
+          onClick={onEdit}
+          key={item?._id}
+          item={item}
+        />
       ))}
     </ListRenderContainer>
   )

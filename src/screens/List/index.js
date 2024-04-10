@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getList } from 'services/request'
+import { getList, updateItem } from 'services/request'
 import { Loader, ListRender, Button, Modal, Title } from 'components'
 import {
   ListScreenContainer,
@@ -47,6 +47,17 @@ export const ListScreen = () => {
     setModalVisible(true)
   }
 
+  const onCheckItem = async (item) => {
+    const result = await updateItem(item._id, {
+      ...item,
+      checked: !item.checked
+    })
+
+    if (!result.error) {
+      await loadListItems()
+    }
+  }
+
   return (
     <ListScreenContainer>
       <ContentContainer>
@@ -68,7 +79,11 @@ export const ListScreen = () => {
           {loading ? (
             <Loader />
           ) : (
-            <ListRender onEdit={onEditItem} list={listData} />
+            <ListRender
+              onCheckItem={onCheckItem}
+              onEdit={onEditItem}
+              list={listData}
+            />
           )}
         </ListContainer>
       </ContentContainer>

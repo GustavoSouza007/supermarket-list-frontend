@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {
   ListCardContainer,
   CheckImage,
@@ -8,14 +7,12 @@ import {
 } from './styles'
 import { SmallText } from 'components/atoms'
 
-export const ListCard = ({ item, onClick }) => {
-  const [checked, setChecked] = useState(item?.checked)
+export const ListCard = ({ item, onClick, onCheckItem }) => {
   return (
     <ListCardContainer>
       <CheckImage
-        onClick={() => setChecked(!checked)}
-        checked={checked}
-        src={`/images/${checked ? 'checked.svg' : 'unchecked.svg'}`}
+        onClick={() => onCheckItem(item)}
+        src={`/images/${item?.checked ? 'checked.svg' : 'unchecked.svg'}`}
         alt="checked-item"
       />
       <TextContainer>
