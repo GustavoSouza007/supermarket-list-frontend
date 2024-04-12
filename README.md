@@ -1,11 +1,16 @@
 # Supermarket List App
 
 This application is built using React.js to make it easier to create supermarket lists.
-It used the Atomic Design concept to organize the components.
+
+<p>It used the Atomic Design concept to organize the components.</p>
 
 <p>
 <img src="https://github.com/GustavoSouza007/supermarket-list-frontend/blob/master/public/images/demo.gif" />
 </p>
+
+## Link to Production App:
+
+https://supermarket-list-frontend-app.vercel.app/
 
 ## Technologies Used:
 
