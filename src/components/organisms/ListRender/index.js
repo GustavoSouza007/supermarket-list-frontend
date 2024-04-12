@@ -32,6 +32,7 @@ export const ListRender = ({ list, onEdit, onCheckItem }) => {
         <ListCard
           onCheckItem={onCheckItem}
           onClick={onEdit}
+          outline={item?.checked}
           key={item?._id}
           item={item}
         />

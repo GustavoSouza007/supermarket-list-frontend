@@ -7,9 +7,9 @@ import {
 } from './styles'
 import { SmallText } from 'components/atoms'
 
-export const ListCard = ({ item, onClick, onCheckItem }) => {
+export const ListCard = ({ item, onClick, onCheckItem, outline }) => {
   return (
-    <ListCardContainer>
+    <ListCardContainer outline={item?.checked ? outline : null}>
       <CheckImage
         onClick={() => onCheckItem(item)}
         src={`/images/${item?.checked ? 'checked.svg' : 'unchecked.svg'}`}

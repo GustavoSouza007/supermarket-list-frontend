@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ListCardContainer = styled.div`
-  width: 100%;
+  width: 99%;
   height: 58px;
   min-height: 58px;
   display: flex;
@@ -11,6 +11,11 @@ export const ListCardContainer = styled.div`
   border-radius: 12px;
   margin-bottom: 28px;
   padding: 0px 12px;
+  border: 1px solid
+    ${({ theme, outline }) =>
+      outline ? 'solid' && theme.colors.primary : 'transparent'};
+  color: ${({ theme, outline }) =>
+    outline ? theme.colors.primary : theme.colors.black};
   background-color: ${({ theme }) => theme.colors.light};
 `
 
