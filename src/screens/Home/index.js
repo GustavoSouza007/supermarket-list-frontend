@@ -16,7 +16,7 @@ export const HomeScreen = () => {
 
   const onClickContinue = () => {
     if (username.length < 3) {
-      toast.success('Username deve conter mais do que 3 caracteres!')
+      toast.warning('Username deve conter mais do que 3 caracteres!')
       return
     }
     localStorage.setItem(SAVE_USERNAME_PATH, username)
