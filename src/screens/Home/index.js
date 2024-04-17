@@ -21,6 +21,7 @@ export const HomeScreen = () => {
     }
     localStorage.setItem(SAVE_USERNAME_PATH, username)
     navigate('/list')
+    window.location.reload()
   }
 
   return (
