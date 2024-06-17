@@ -95,15 +95,15 @@ export const Modal = ({ onClose, item }) => {
           type="number"
         />
         <ButtonsContainer>
+          <Button onClick={item ? callUpdateItem : callAddItem}>
+            {item ? 'Atualizar' : 'Adicionar'}
+          </Button>
+          <ButtonsSpacer />
           {item && (
             <Button icon="trash" variant="outline" onClick={callDeleteItem}>
               Deletar item
             </Button>
           )}
-          <ButtonsSpacer />
-          <Button onClick={item ? callUpdateItem : callAddItem}>
-            {item ? 'Atualizar' : 'Adicionar'}
-          </Button>
         </ButtonsContainer>
       </ModalContentContainer>
     </ModalBackgroundContainer>

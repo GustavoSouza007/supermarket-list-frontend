@@ -24,23 +24,23 @@ export const ModalContentContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
 
   @media (max-width: 1185px) {
-    width: 28vw;
-  }
-
-  @media (max-width: 1015px) {
     width: 32vw;
   }
 
-  @media (max-width: 890px) {
-    width: 38vw;
+  @media (max-width: 1015px) {
+    width: 36vw;
   }
 
-  @media (max-width: 730px) {
+  @media (max-width: 890px) {
     width: 42vw;
   }
 
+  @media (max-width: 730px) {
+    width: 46vw;
+  }
+
   @media (max-width: 630px) {
-    width: 50vw;
+    width: 100vw;
   }
 
   @media (max-width: 500px) {
@@ -75,8 +75,7 @@ export const ButtonsContainer = styled.div`
   min-height: 12vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin-top: auto;
+  margin-top: 32px;
   margin-bottom: 32px;
 
   @media (max-width: 500px) {
@@ -85,5 +84,5 @@ export const ButtonsContainer = styled.div`
 `
 
 export const ButtonsSpacer = styled.div`
-  height: 24px;
+  height: 18px;
 `
